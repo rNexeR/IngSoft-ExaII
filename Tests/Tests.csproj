@@ -63,7 +63,9 @@
   </Choose>
   <ItemGroup>
     <Compile Include="CSV-Tests.cs" />
+    <Compile Include="JsonTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="XML-Tests.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
