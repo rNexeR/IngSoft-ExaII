@@ -2,7 +2,7 @@
 {
     public class DataTypeDetectorsRepository
     {
-        string FormatField(string s)
+        public string FormatField(string s)
         {
             return "";
         }
