@@ -9,15 +9,15 @@ namespace Logic.Converter
 {
     public class CsvConverter
     {
-        private IOutputWriter _outputWriter;
-        private ICsvParseOption _csvParseOption;
-        private IInputReader _input_reader;
-        private IDataTypeDetectorsRepository _detectorsRepository;
+        private readonly IOutputWriter _outputWriter;
+        private readonly ICsvParseOption _csvParseOption;
+        private readonly IInputReader _inputReader;
+        private readonly IDataTypeDetectorsRepository _detectorsRepository;
         private readonly CsvParser _parser;
 
-        public CsvConverter(IInputReader input_reader, ICsvParseOption csvParseOption, IDataTypeDetectorsRepository detectorsRepository, IOutputWriter outputWriter)
+        public CsvConverter(IInputReader inputReader, ICsvParseOption csvParseOption, IDataTypeDetectorsRepository detectorsRepository, IOutputWriter outputWriter)
         {
-            this._input_reader = input_reader;
+            this._inputReader = inputReader;
             this._csvParseOption = csvParseOption;
             this._outputWriter = outputWriter;
             this._detectorsRepository = detectorsRepository;
@@ -26,24 +26,21 @@ namespace Logic.Converter
 
         public void Convert()
         {
-            var csvString = _input_reader.GetInput();
+            var csvString = _inputReader.GetInput();
             var csv = _parser.Parse(csvString);
-            var outputString = "";
 
             foreach (var row in csv.Rows)
             {
-                var rowString = _csvParseOption.CreateRow();
-                var fieldsString = new List<string>();
+                _csvParseOption.AddRow();
                 for (var i = 0; i < csv.Headers.Count; i++)
                 {
-                    fieldsString.Add(_csvParseOption.CreateField);
+                    var field = _detectorsRepository.FormatField(row[i]);
+                    _csvParseOption.AddField(field, csv.Headers[i]);
                 }
-                rowString += _csvParseOption.AddFields(fieldsString);
-                rowString += _csvParseOption.CloseRow();
-                outputString += rowString;
+                _csvParseOption.CloseRow();
             }
 
-            _outputWriter.Write(outputString);
+            _outputWriter.Write(_csvParseOption.ToString());
         }
     }
 }

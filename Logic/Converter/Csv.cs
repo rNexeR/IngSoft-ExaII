@@ -6,8 +6,8 @@ namespace Logic.Converter
 {
     public class Csv
     {
-        public ICollection Rows { get; set; }
-        public ICollection<string> Headers { get; set; }
+        public List<List<string>> Rows { get; set; }
+        public List<string> Headers { get; set; }
 
         public Csv()
         {
