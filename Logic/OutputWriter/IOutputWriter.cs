@@ -2,5 +2,6 @@
 {
     public interface IOutputWriter
     {
+        void Write(string outputString);
     }
 }

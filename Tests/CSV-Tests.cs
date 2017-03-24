@@ -2,6 +2,7 @@
 using Autofac;
 using Logic;
 using Logic.Converter;
+using Logic.DataTypeDetector;
 using Logic.Exceptions;
 using Logic.InputReader;
 using Logic.OutputWriter;
@@ -21,9 +22,10 @@ namespace Tests
             var input_reader = new Mock<IInputReader>();
             var csvParseOption = new Mock<ICsvParseOption>();
             var outputWriter = new Mock<IOutputWriter>();
-            var converter = new CsvConverter(input_reader.Object, csvParseOption.Object, outputWriter.Object);
+            var dataTypeDetector = new Mock<IDataTypeDetectorsRepository>();
+            var converter = new CsvConverter(input_reader.Object, csvParseOption.Object, dataTypeDetector.Object, outputWriter.Object);
 
-            converter.CheckFormat();
+            converter.Convert();
             /*
             var builder = new ContainerBuilder();
 
@@ -44,9 +46,10 @@ namespace Tests
             var input_reader = new Mock<IInputReader>();
             var csvParseOption = new Mock<ICsvParseOption>();
             var outputWriter = new Mock<IOutputWriter>();
-            var converter = new CsvConverter(input_reader.Object, csvParseOption.Object, outputWriter.Object);
+            var dataTypeDetector = new Mock<IDataTypeDetectorsRepository>();
+            var converter = new CsvConverter(input_reader.Object, csvParseOption.Object, dataTypeDetector.Object, outputWriter.Object);
 
-            converter.CheckFormat();
+            converter.Convert();
         }
 
         [TestMethod]
@@ -56,9 +59,10 @@ namespace Tests
             var input_reader = new Mock<IInputReader>();
             var csvParseOption = new Mock<ICsvParseOption>();
             var outputWriter = new Mock<IOutputWriter>();
-            var converter = new CsvConverter(input_reader.Object, csvParseOption.Object, outputWriter.Object);
+            var dataTypeDetector = new Mock<IDataTypeDetectorsRepository>();
+            var converter = new CsvConverter(input_reader.Object, csvParseOption.Object, dataTypeDetector.Object, outputWriter.Object);
 
-            converter.CheckFormat();
+            converter.Convert();
         }
 
         [TestMethod]
@@ -67,9 +71,10 @@ namespace Tests
             var input_reader = new Mock<IInputReader>();
             var csvParseOption = new Mock<ICsvParseOption>();
             var outputWriter = new Mock<IOutputWriter>();
-            var converter = new CsvConverter(input_reader.Object, csvParseOption.Object, outputWriter.Object);
+            var dataTypeDetector = new Mock<IDataTypeDetectorsRepository>();
+            var converter = new CsvConverter(input_reader.Object, csvParseOption.Object, dataTypeDetector.Object, outputWriter.Object);
 
-            converter.CheckFormat();
+            converter.Convert();
         }
     }
 }
