@@ -40,11 +40,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BadHeaderNameException.cs" />
     <Compile Include="Class1.cs" />
-    <Compile Include="LessColumnsThanHeadersException.cs" />
-    <Compile Include="MoreColumnsThanHeadersException.cs" />
+    <Compile Include="Exceptions\BadHeaderNameException.cs" />
+    <Compile Include="Exceptions\LessColumnsThanHeadersException.cs" />
+    <Compile Include="Exceptions\MoreColumnsThanHeadersException.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
