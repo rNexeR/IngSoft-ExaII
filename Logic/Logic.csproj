@@ -30,6 +30,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Autofac, Version=4.4.0.0, Culture=neutral, PublicKeyToken=17863af14b0044da, processorArchitecture=MSIL">
+      <HintPath>..\packages\Autofac.4.4.0\lib\net45\Autofac.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -40,10 +44,22 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Class1.cs" />
+    <Compile Include="Converter\Csv.cs" />
+    <Compile Include="Converter\CsvConverter.cs" />
+    <Compile Include="Converter\CsvParser.cs" />
+    <Compile Include="DataTypeDetector\DateTypeDetector.cs" />
+    <Compile Include="DataTypeDetector\DataTypeDetectorsRepository.cs" />
+    <Compile Include="DataTypeDetector\IntTypeDetector.cs" />
+    <Compile Include="DataTypeDetector\ITypeDetector.cs" />
+    <Compile Include="DataTypeDetector\StringTypeDetector.cs" />
     <Compile Include="Exceptions\BadHeaderNameException.cs" />
-    <Compile Include="Exceptions\LessColumnsThanHeadersException.cs" />
     <Compile Include="Exceptions\MoreColumnsThanHeadersException.cs" />
+    <Compile Include="Exceptions\LessColumnsThanHeadersException.cs" />
+    <Compile Include="InputReader\IInputReader.cs" />
+    <Compile Include="OutputWriter\ConsoleOutputWriter.cs" />
+    <Compile Include="OutputWriter\FileOutPutWriter.cs" />
+    <Compile Include="OutputWriter\IOutputWriter.cs" />
+    <Compile Include="ParseOptions\ICsvParseOption.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
