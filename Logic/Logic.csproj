@@ -30,6 +30,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Autofac, Version=4.4.0.0, Culture=neutral, PublicKeyToken=17863af14b0044da, processorArchitecture=MSIL">
+      <HintPath>..\packages\Autofac.4.4.0\lib\net45\Autofac.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -40,11 +44,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BadHeaderNameException.cs" />
-    <Compile Include="Class1.cs" />
-    <Compile Include="LessColumnsThanHeadersException.cs" />
-    <Compile Include="MoreColumnsThanHeadersException.cs" />
+    <Compile Include="Converter\CsvConverter.cs" />
+    <Compile Include="Exceptions\BadHeaderNameException.cs" />
+    <Compile Include="Exceptions\MoreColumnsThanHeadersException.cs" />
+    <Compile Include="Exceptions\LessColumnsThanHeadersException.cs" />
+    <Compile Include="InputReader\IInputReader.cs" />
+    <Compile Include="OutputWriter\IOutputWriter.cs" />
+    <Compile Include="ParseOptions\ICsvParseOption.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
