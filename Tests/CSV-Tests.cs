@@ -22,7 +22,7 @@ namespace Tests
             var input_reader = new Mock<IInputReader>();
             var csvParseOption = new Mock<ICsvParseOption>();
             var outputWriter = new Mock<IOutputWriter>();
-            var dataTypeDetector = new Mock<IDataTypeDetectorsRepository>();
+            var dataTypeDetector = new Mock<DataTypeDetectorsRepository>();
             var converter = new CsvConverter(input_reader.Object, csvParseOption.Object, dataTypeDetector.Object, outputWriter.Object);
 
             converter.Convert();
@@ -46,7 +46,7 @@ namespace Tests
             var input_reader = new Mock<IInputReader>();
             var csvParseOption = new Mock<ICsvParseOption>();
             var outputWriter = new Mock<IOutputWriter>();
-            var dataTypeDetector = new Mock<IDataTypeDetectorsRepository>();
+            var dataTypeDetector = new Mock<DataTypeDetectorsRepository>();
             var converter = new CsvConverter(input_reader.Object, csvParseOption.Object, dataTypeDetector.Object, outputWriter.Object);
 
             converter.Convert();
@@ -59,7 +59,7 @@ namespace Tests
             var input_reader = new Mock<IInputReader>();
             var csvParseOption = new Mock<ICsvParseOption>();
             var outputWriter = new Mock<IOutputWriter>();
-            var dataTypeDetector = new Mock<IDataTypeDetectorsRepository>();
+            var dataTypeDetector = new Mock<DataTypeDetectorsRepository>();
             var converter = new CsvConverter(input_reader.Object, csvParseOption.Object, dataTypeDetector.Object, outputWriter.Object);
 
             converter.Convert();
@@ -71,7 +71,7 @@ namespace Tests
             var input_reader = new Mock<IInputReader>();
             var csvParseOption = new Mock<ICsvParseOption>();
             var outputWriter = new Mock<IOutputWriter>();
-            var dataTypeDetector = new Mock<IDataTypeDetectorsRepository>();
+            var dataTypeDetector = new Mock<DataTypeDetectorsRepository>();
             var converter = new CsvConverter(input_reader.Object, csvParseOption.Object, dataTypeDetector.Object, outputWriter.Object);
 
             converter.Convert();
