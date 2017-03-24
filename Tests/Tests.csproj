@@ -81,7 +81,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>JsonConverter.feature</DependentUpon>
     </Compile>
-    <Compile Include="JsonTests.cs" />
+    <Compile Include="JsonConverterSteps.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="DataTypeTests.cs" />
     <Compile Include="CsvParserTests.cs" />
