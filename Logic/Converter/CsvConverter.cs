@@ -1,4 +1,4 @@
-﻿using Logic.FileReader;
+﻿using Logic.InputReader;
 using Logic.OutputWriter;
 using Logic.ParseOptions;
 
@@ -8,9 +8,9 @@ namespace Logic.Converter
     {
         private IOutputWriter _outputWriter;
         private ICsvParseOption _csvParseOption;
-        private IFileReader _fileReader;
+        private IInputReader _fileReader;
 
-        public CsvConverter(IFileReader fileReader, ICsvParseOption csvParseOption, IOutputWriter outputWriter)
+        public CsvConverter(IInputReader fileReader, ICsvParseOption csvParseOption, IOutputWriter outputWriter)
         {
             this._fileReader = fileReader;
             this._csvParseOption = csvParseOption;
@@ -18,6 +18,11 @@ namespace Logic.Converter
         }
 
         public void Convert()
+        {
+            throw new System.NotImplementedException();
+        }
+
+        public void CheckFormat()
         {
             throw new System.NotImplementedException();
         }
