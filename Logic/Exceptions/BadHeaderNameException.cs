@@ -2,7 +2,7 @@
 
 namespace Logic.Exceptions
 {
-    internal class BadHeaderNameException : Exception
+    public class BadHeaderNameException : Exception
     {
         public BadHeaderNameException(string message) : base(message)
         {

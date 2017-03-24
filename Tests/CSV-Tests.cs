@@ -12,12 +12,14 @@ namespace Tests
         [ExpectedException(typeof(MoreColumnsThanHeadersException))]
         public void TestMoreColumnsThanHeaders()
         {
+            var converter = new CsvConverter();
         }
 
         [TestMethod]
         [ExpectedException(typeof(LessColumnsThanHeadersException))]
         public void TestLessColumnsThanHeaders()
         {
+
         }
 
         [TestMethod]
@@ -33,7 +35,10 @@ namespace Tests
 
         }
 
-        //[TestMethod]
-        //public void Test
+        [TestMethod]
+        public void TestDataTypeDetection()
+        {
+            
+        }
     }
 }
