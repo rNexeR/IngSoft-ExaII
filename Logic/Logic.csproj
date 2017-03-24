@@ -44,6 +44,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Converter\CsvConverter.cs" />
     <Compile Include="Exceptions\BadHeaderNameException.cs" />
     <Compile Include="Exceptions\MoreColumnsThanHeadersException.cs" />
     <Compile Include="Exceptions\LessColumnsThanHeadersException.cs" />

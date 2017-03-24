@@ -63,7 +63,6 @@
   </Choose>
   <ItemGroup>
     <Compile Include="CSV-Tests.cs" />
-    <Compile Include="CsvConverter.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
