@@ -8,7 +8,8 @@
 
         public bool Detect(string stringField)
         {
-            throw new System.NotImplementedException();
+            int value;
+            return int.TryParse(stringField, out value);
         }
     }
 }
