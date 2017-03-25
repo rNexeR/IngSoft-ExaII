@@ -44,7 +44,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Converter\Csv.cs" />
     <Compile Include="Converter\CsvConverter.cs" />
+    <Compile Include="Converter\CsvParser.cs" />
+    <Compile Include="DataTypeDetector\DateTypeDetector.cs" />
+    <Compile Include="DataTypeDetector\DataTypeDetectorsRepository.cs" />
+    <Compile Include="DataTypeDetector\IntTypeDetector.cs" />
+    <Compile Include="DataTypeDetector\ITypeDetector.cs" />
+    <Compile Include="DataTypeDetector\StringTypeDetector.cs" />
     <Compile Include="Exceptions\BadHeaderNameException.cs" />
     <Compile Include="Exceptions\MoreColumnsThanHeadersException.cs" />
     <Compile Include="Exceptions\LessColumnsThanHeadersException.cs" />
