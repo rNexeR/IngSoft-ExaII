@@ -9,4 +9,4 @@ Scenario: convert CSV to JSON
 	| tonio  | mejia     | 20   |
 	| josue  | barahona  | 21   |
 	When I press convert to Json
-	Then the result should be '[{"nombre":"nexer","apellido":"rodriguez","edad":21},{"nombre":"kevin","apellido":"estevez","edad":21},{"nombre":"tonio","apellido":"mejia","edad":20},{"nombre":"josue","apellido":"barahona","edad":21}]'
+	Then the result should be '{"Rows":[{"nombre":"nexer","apellido":"rodriguez","edad":21},{"nombre":"kevin","apellido":"estevez","edad":21},{"nombre":"tonio","apellido":"mejia","edad":20},{"nombre":"josue","apellido":"barahona","edad":21}]}'
