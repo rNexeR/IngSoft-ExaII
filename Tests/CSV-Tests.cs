@@ -19,11 +19,11 @@ namespace Tests
         [ExpectedException(typeof(MoreColumnsThanHeadersException))]
         public void TestMoreColumnsThanHeaders()
         {
-            var input_reader = new Mock<IInputReader>();
+            var inputReader = new Mock<IInputReader>();
             var csvParseOption = new Mock<ICsvParseOption>();
             var outputWriter = new Mock<IOutputWriter>();
             var dataTypeDetector = new Mock<DataTypeDetectorsRepository>();
-            var converter = new CsvConverter(input_reader.Object, csvParseOption.Object, dataTypeDetector.Object, outputWriter.Object);
+            var converter = new CsvConverter(inputReader.Object, csvParseOption.Object, dataTypeDetector.Object, outputWriter.Object);
 
             converter.Convert();
             /*
@@ -43,11 +43,11 @@ namespace Tests
         [ExpectedException(typeof(LessColumnsThanHeadersException))]
         public void TestLessColumnsThanHeaders()
         {
-            var input_reader = new Mock<IInputReader>();
+            var inputReader = new Mock<IInputReader>();
             var csvParseOption = new Mock<ICsvParseOption>();
             var outputWriter = new Mock<IOutputWriter>();
             var dataTypeDetector = new Mock<DataTypeDetectorsRepository>();
-            var converter = new CsvConverter(input_reader.Object, csvParseOption.Object, dataTypeDetector.Object, outputWriter.Object);
+            var converter = new CsvConverter(inputReader.Object, csvParseOption.Object, dataTypeDetector.Object, outputWriter.Object);
 
             converter.Convert();
         }
@@ -68,11 +68,11 @@ namespace Tests
         [TestMethod]
         public void TestCorrectCsvFormat()
         {
-            var input_reader = new Mock<IInputReader>();
+            var inputReader = new Mock<IInputReader>();
             var csvParseOption = new Mock<ICsvParseOption>();
             var outputWriter = new Mock<IOutputWriter>();
             var dataTypeDetector = new Mock<DataTypeDetectorsRepository>();
-            var converter = new CsvConverter(input_reader.Object, csvParseOption.Object, dataTypeDetector.Object, outputWriter.Object);
+            var converter = new CsvConverter(inputReader.Object, csvParseOption.Object, dataTypeDetector.Object, outputWriter.Object);
 
             converter.Convert();
         }
