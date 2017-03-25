@@ -7,25 +7,23 @@ using System.Threading.Tasks;
 
 namespace Logic.InputReader
 {
-    class FileInputReader : IInputReader
+    public class FileInputReader : IInputReader
     {
         private string filePath = "";
         public FileInputReader(string filePath)
         {
+            if(!File.Exists(filePath))
+            {
+                throw new FileNotFoundException("The file " + filePath + " if not exist");
+            }
             this.filePath = filePath;
         }
         public string GetInput()
         {
-            if (File.Exists(filePath))
-            {
                 StreamReader str = new StreamReader(filePath);
                 string fileReaded = str.ReadToEnd();
                 return fileReaded;
-            }
-            else
-            {
-                throw new FileNotFoundException("The file " + filePath + " if not exist");
-            }
+            
         }
     }
 }

@@ -10,9 +10,9 @@ namespace Logic.ParseOptions
     {
         private readonly XML _xml;
         private int sizeRow = 0;
-        private List<string> beforeFilesNames;
-        private List<string> FilesNames;
-        private List<string> tmpFilesNames;
+        private List<string> beforeFilesNames = new List<string>();
+        private List<string> FilesNames = new List<string>();
+        private List<string> tmpFilesNames = new List<string>();
         public XMLParseOption(XML xml)
         {
             this._xml = xml; 
