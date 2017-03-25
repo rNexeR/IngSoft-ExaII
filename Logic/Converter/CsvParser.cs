@@ -1,3 +1,4 @@
+using System;
 using System.Linq;
 using Logic.Exceptions;
 
@@ -16,7 +17,12 @@ namespace Logic.Converter
 
             for (var i = 0; i < data.Length; i++)
             {
-                var columns = data[i].Split(',');
+                //var columns = data[i].Split(',');
+                var columns = data[i].Split('"')
+                     .Select((element, index) => index % 2 == 0  // If even index
+                                           ? element.Split(new[] { ',' })  // Split the item
+                                           : new string[] { element })  // Keep the entire item
+                     .SelectMany(element => element).ToArray();
                 if (i == 0)
                     SetHeaders(columns, ref ret);
                 else
