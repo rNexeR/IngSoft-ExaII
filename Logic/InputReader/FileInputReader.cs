@@ -10,13 +10,13 @@ namespace Logic.InputReader
     public class FileInputReader : IInputReader
     {
         private string filePath = "";
-        public FileInputReader(string filePath)
+        public FileInputReader(string fPath)
         {
-            if(!File.Exists(filePath))
+            if(!File.Exists(fPath))
             {
-                throw new FileNotFoundException("The file " + filePath + " if not exist");
+                throw new FileNotFoundException("The file " + fPath + " if not exist");
             }
-            this.filePath = filePath;
+            this.filePath = fPath;
         }
         public string GetInput()
         {
