@@ -8,19 +8,30 @@ namespace Logic.ParseOptions
 {
     class JsonParseOption : ICsvParseOption
     {
+        private string _json;
+
+        public JsonParseOption()
+        {
+            _json = "{'Rows':[";
+        }
         public void AddRow()
         {
-            throw new NotImplementedException();
+            _json += "{";
         }
 
         public void CloseRow()
         {
-            throw new NotImplementedException();
+            _json += "},";
         }
 
         public void AddField(string fieldValue, string fieldName)
         {
-            throw new NotImplementedException();
+            _json += $"{fieldName}:{fieldValue},";
+        }
+
+        public override string ToString()
+        {
+            return (_json + "]}").Replace(",]", "]").Replace(",}", "}") ;
         }
     }
 }
