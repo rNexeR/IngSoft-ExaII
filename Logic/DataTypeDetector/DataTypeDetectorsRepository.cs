@@ -4,7 +4,7 @@
     {
         public string FormatField(string s)
         {
-            return "";
+            return s;
         }
     }
 }
