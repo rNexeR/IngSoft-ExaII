@@ -58,6 +58,8 @@
     <Compile Include="InputReader\IInputReader.cs" />
     <Compile Include="OutputWriter\IOutputWriter.cs" />
     <Compile Include="ParseOptions\ICsvParseOption.cs" />
+    <Compile Include="ParseOptions\XML.cs" />
+    <Compile Include="ParseOptions\XMLConverter.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
