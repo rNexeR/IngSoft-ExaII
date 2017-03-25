@@ -6,16 +6,10 @@ using System.Threading.Tasks;
 using Logic.ParseOptions;
 namespace Logic.ParseOptions
 {
-    public class XMLParseOption : ICsvParseOption
+    public class XmlParseOption : ICsvParseOption
     {
-        //private XML _xml;
-        //private int sizeRow = 0;
-        //private List<string> beforeFilesNames = new List<string>();
-        //private List<string> FilesNames = new List<string>();
-        //private List<string> tmpFilesNames = new List<string>();
-
         private string _xml;
-        public XMLParseOption()
+        public XmlParseOption()
         {
             this._xml = "<Rows>";
             

@@ -31,7 +31,7 @@ namespace Logic.ParseOptions
 
         public override string ToString()
         {
-            return (_json + "]}").Replace(",]", "]").Replace(",}", "}") ;
+            return (_json + "]}").Replace(",]", "]").Replace(",}", "}");
         }
     }
 }

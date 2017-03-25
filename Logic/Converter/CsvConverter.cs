@@ -34,7 +34,8 @@ namespace Logic.Converter
                 _csvParseOption.AddRow();
                 for (var i = 0; i < csv.Headers.Count; i++)
                 {
-                    var field = _detectorsRepository.FormatField(row[i]);
+                    var tmp = _detectorsRepository.FormatField(row[i]);
+                    string field = tmp.Replace("\r", "");
                     _csvParseOption.AddField(field, csv.Headers[i]);
                 }
                 _csvParseOption.CloseRow();
