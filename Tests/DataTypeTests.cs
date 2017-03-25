@@ -47,5 +47,15 @@ namespace Tests
             var dateTypeDetector = new DateTypeDetector();
             Assert.IsTrue(dateTypeDetector.Detect(dateField));
         }
+
+        [TestMethod]
+        public void TestCorrectDateTypeParsed()
+        {
+            var dateField = "#13/10/2017#";
+            var expected = "\"oct. vi. 13 00:00 2017\"";
+            var dateTypeDetector = new DateTypeDetector();
+            string parserd = dateTypeDetector.Parse(dateField);
+            Assert.AreEqual(parserd,expected);
+        }
     }
 }

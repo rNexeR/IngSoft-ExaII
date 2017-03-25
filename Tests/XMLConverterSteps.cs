@@ -13,11 +13,10 @@ using TechTalk.SpecFlow;
 namespace Tests
 {
     [Binding]
-    public class XMLConverterSteps
+    public class XmlConverterSteps
     {
         private string[] _csvArray;
         private CsvConverter _converter;
-        private XML xml;
         private string _output;
         [Given(@"the next table of csv representation file")]
         public void GivenTheNextTableOfCsvRepresentationFile(Table table)
@@ -31,9 +30,8 @@ namespace Tests
         }
         
         [When(@"I press convert to XML")]
-        public void WhenIPressConvertToXML()
+        public void WhenIPressConvertToXml()
         {
-            xml = new XML();
             var outputWriter = new Mock<IOutputWriter>();
             _output = "";
             outputWriter.Setup(x => x.Write(It.IsAny<string>())).Callback<string>(r => _output = r);
@@ -41,7 +39,7 @@ namespace Tests
             var inputReader = new Mock<IInputReader>();
             inputReader.Setup(x => x.GetInput()).Returns(string.Join("\n", _csvArray));
             
-            ICsvParseOption csvParseOption = new XMLParseOption();
+            ICsvParseOption csvParseOption = new XmlParseOption();
             List<ITypeDetector> detectors = new List<ITypeDetector>();
             detectors.Add(new IntTypeDetector());
             detectors.Add(new DateTypeDetector());

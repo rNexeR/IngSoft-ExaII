@@ -54,7 +54,10 @@ namespace Logic.Converter
                 else if (field.Contains(" "))
                     throw new HeaderNameCannotContainSpacesException("Space found in Header");
                 else
-                    csv.Headers.Add(field);
+                {
+                    string tmp = field.Replace("\r", "");
+                    csv.Headers.Add(tmp);
+                }
             }
         }
     }

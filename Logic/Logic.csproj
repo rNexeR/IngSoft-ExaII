@@ -71,7 +71,6 @@
     <Compile Include="OutputWriter\ConsoleOutputWriter.cs" />
     <Compile Include="OutputWriter\FileOutPutWriter.cs" />
     <Compile Include="ParseOptions\ICsvParseOption.cs" />
-    <Compile Include="ParseOptions\XML.cs" />
     <Compile Include="ParseOptions\XMLParseOption.cs" />
     <Compile Include="ParseOptions\JsonParseOption.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
