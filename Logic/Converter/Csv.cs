@@ -11,6 +11,8 @@ namespace Logic.Converter
 
         public Csv()
         {
+            Headers = new List<string>();
+            Rows = new List<List<string>>();
         }
     }
 }

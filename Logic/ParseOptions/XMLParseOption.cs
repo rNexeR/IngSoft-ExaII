@@ -6,14 +6,14 @@ using System.Threading.Tasks;
 using Logic.ParseOptions;
 namespace Logic.ParseOptions
 {
-    public class XMLConverter : ICsvParseOption
+    public class XMLParseOption : ICsvParseOption
     {
         private readonly XML _xml;
         private int sizeRow = 0;
         private List<string> beforeFilesNames;
         private List<string> FilesNames;
         private List<string> tmpFilesNames;
-        public XMLConverter(XML xml)
+        public XMLParseOption(XML xml)
         {
             this._xml = xml; 
         }
@@ -48,6 +48,16 @@ namespace Logic.ParseOptions
         {
             string tmp = " </Row>";
             _xml.rows[sizeRow] += tmp;
+        }
+        public string GetCSVParsedToXML()
+        {
+            string tmp = "<Rows> ";
+            for(int i=0; i<_xml.rows.Count; i++)
+            {
+                tmp += _xml.rows[i];
+            }
+            tmp += " </Rows>";
+            return tmp;
         }
     }
 }
