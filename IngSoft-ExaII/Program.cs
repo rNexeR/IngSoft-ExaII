@@ -21,7 +21,7 @@ namespace IngSoft_ExaII
             if (args.Length >=2)
             {
                 inputFile = args[0];
-                optionParse = args[1];
+                optionParse = args[1].ToLower();
                 if (args.Length == 3)
                     outputFile = args[2];
             }
