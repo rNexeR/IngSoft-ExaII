@@ -41,6 +41,25 @@ namespace IngSoft_ExaII
             //var csvConverter = new CsvConverter(inputReader, csvParseOption, typesRepository, outputWriter);
             //csvConverter.Convert();
 
+            /*
+             var builder = new ContainerBuilder();
+            builder.Register(c => new CsvConverter(
+                c.Resolve<IInputReader>(),
+                c.Resolve<ICsvParseOption>(),
+                c.Resolve<DataTypeDetectorsRepository>(),
+                c.Resolve<IOutputWriter>()
+                ));
+            builder.RegisterInstance(inputReader.Object).As<IInputReader>();
+            builder.RegisterInstance(csvParseOption.Object).As<ICsvParseOption>();
+            builder.RegisterInstance(outputWriter.Object).As<IOutputWriter>();
+            builder.RegisterInstance(dataTypeDetector).As<DataTypeDetectorsRepository>();
+
+            using (var container = builder.Build())
+            {
+                container.Resolve<CsvConverter>().Convert();
+            }
+             */
+
             Console.ReadLine();
         }
     }
