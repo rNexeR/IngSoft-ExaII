@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Logic.ParseOptions
 {
-    class JsonParseOption : ICsvParseOption
+    public class JsonParseOption : ICsvParseOption
     {
         private string _json;
 
