@@ -85,7 +85,12 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="DataTypeTests.cs" />
     <Compile Include="CsvParserTests.cs" />
-    <Compile Include="XML-Tests.cs" />
+    <Compile Include="XMLConverter.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>XMLConverter.feature</DependentUpon>
+    </Compile>
+    <Compile Include="XMLConverterSteps.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -94,6 +99,10 @@
       <LastGenOutput>JsonConverter.feature.cs</LastGenOutput>
     </None>
     <None Include="packages.config" />
+    <None Include="XMLConverter.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>XMLConverter.feature.cs</LastGenOutput>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Logic\Logic.csproj">

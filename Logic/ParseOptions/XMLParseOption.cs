@@ -38,7 +38,7 @@ namespace Logic.ParseOptions
             string tmp = "<Row>";
             for(int i=_xml.sizeTags; i<(FilesNames.Count +_xml.sizeTags); i++)
             {
-                tmp += " " + tmpFilesNames[i];
+                tmp +=tmpFilesNames[i];
             }
             _xml.rows.Add(tmp);
             _xml.sizeTags +=3;
@@ -46,17 +46,17 @@ namespace Logic.ParseOptions
 
         public void CloseRow()
         {
-            string tmp = " </Row>";
+            string tmp = "</Row>";
             _xml.rows[sizeRow] += tmp;
         }
         public string GetCSVParsedToXML()
         {
-            string tmp = "<Rows> ";
+            string tmp = "<Rows>";
             for(int i=0; i<_xml.rows.Count; i++)
             {
                 tmp += _xml.rows[i];
             }
-            tmp += " </Rows>";
+            tmp += "</Rows>";
             return tmp;
         }
     }
