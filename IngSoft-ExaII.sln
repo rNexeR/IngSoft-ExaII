@@ -1,11 +1,14 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
-VisualStudioVersion = 14.0.25420.1
+VisualStudioVersion = 14.0.24720.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IngSoft-ExaII", "IngSoft-ExaII\IngSoft-ExaII.csproj", "{84EA7EC0-58CC-4C7A-B405-C271E79D12BE}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tests", "Tests\Tests.csproj", "{BC8F4A93-3ADB-4B2F-8AEA-CB8A2AD97B4B}"
+	ProjectSection(ProjectDependencies) = postProject
+		{84EA7EC0-58CC-4C7A-B405-C271E79D12BE} = {84EA7EC0-58CC-4C7A-B405-C271E79D12BE}
+	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Logic", "Logic\Logic.csproj", "{AD65E597-6F1D-4DF0-8ABC-2C4E99D8B248}"
 EndProject

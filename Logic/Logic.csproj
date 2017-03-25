@@ -59,6 +59,8 @@
     <Compile Include="Exceptions\LessColumnsThanHeadersException.cs" />
     <Compile Include="InputReader\IInputReader.cs" />
     <Compile Include="OutputWriter\IOutputWriter.cs" />
+    <Compile Include="OutputWriter\ConsoleOutputWriter.cs" />
+    <Compile Include="OutputWriter\FileOutPutWriter.cs" />
     <Compile Include="ParseOptions\ICsvParseOption.cs" />
     <Compile Include="ParseOptions\JsonParseOption.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
