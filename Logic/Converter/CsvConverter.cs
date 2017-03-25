@@ -12,10 +12,10 @@ namespace Logic.Converter
         private readonly IOutputWriter _outputWriter;
         private readonly ICsvParseOption _csvParseOption;
         private readonly IInputReader _inputReader;
-        private readonly IDataTypeDetectorsRepository _detectorsRepository;
+        private readonly DataTypeDetectorsRepository _detectorsRepository;
         private readonly CsvParser _parser;
 
-        public CsvConverter(IInputReader inputReader, ICsvParseOption csvParseOption, IDataTypeDetectorsRepository detectorsRepository, IOutputWriter outputWriter)
+        public CsvConverter(IInputReader inputReader, ICsvParseOption csvParseOption, DataTypeDetectorsRepository detectorsRepository, IOutputWriter outputWriter)
         {
             this._inputReader = inputReader;
             this._csvParseOption = csvParseOption;
