@@ -98,9 +98,9 @@ this.ScenarioSetup(scenarioInfo);
 #line 11
  testRunner.When("I press convert to Json", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 12
- testRunner.Then("the result should be \'[{\"nombre\":\"nexer\",\"apellido\":\"rodriguez\",\"edad\":21},{\"nomb" +
-                    "re\":\"kevin\",\"apellido\":\"estevez\",\"edad\":21},{\"nombre\":\"tonio\",\"apellido\":\"mejia\"" +
-                    ",\"edad\":20},{\"nombre\":\"josue\",\"apellido\":\"barahona\",\"edad\":21}]\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("the result should be \'{\"Rows\":[{\"nombre\":\"nexer\",\"apellido\":\"rodriguez\",\"edad\":21" +
+                    "},{\"nombre\":\"kevin\",\"apellido\":\"estevez\",\"edad\":21},{\"nombre\":\"tonio\",\"apellido\"" +
+                    ":\"mejia\",\"edad\":20},{\"nombre\":\"josue\",\"apellido\":\"barahona\",\"edad\":21}]}\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
         }

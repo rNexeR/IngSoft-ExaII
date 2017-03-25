@@ -1,4 +1,6 @@
-﻿namespace Logic.DataTypeDetector
+﻿using System;
+
+namespace Logic.DataTypeDetector
 {
     public class StringTypeDetector : ITypeDetector
     {
@@ -11,6 +13,12 @@
                 return true;
             }
             return false;
+        }
+
+        public string Parse(string stringField)
+        {
+            string stringParse = "\""+stringField+"\"";
+            return stringParse;
         }
     }
 }

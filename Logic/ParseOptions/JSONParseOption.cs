@@ -12,7 +12,7 @@ namespace Logic.ParseOptions
 
         public JsonParseOption()
         {
-            _json = "{'Rows':[";
+            _json = "{\"Rows\":[";
         }
         public void AddRow()
         {
@@ -26,7 +26,7 @@ namespace Logic.ParseOptions
 
         public void AddField(string fieldValue, string fieldName)
         {
-            _json += $"{fieldName}:{fieldValue},";
+            _json += $"\"{fieldName}\":{fieldValue},";
         }
 
         public override string ToString()
