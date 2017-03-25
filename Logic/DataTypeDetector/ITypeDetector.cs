@@ -4,6 +4,6 @@
     {
         bool Detect(string stringField);
 
-        dynamic Parse(string stringField);
+        string Parse(string stringField);
     }
 }

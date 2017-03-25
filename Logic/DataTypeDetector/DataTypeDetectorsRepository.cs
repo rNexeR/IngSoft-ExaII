@@ -6,6 +6,10 @@ namespace Logic.DataTypeDetector
     {
         private readonly List<ITypeDetector> _detectors;
 
+        public DataTypeDetectorsRepository()
+        {
+        }
+
         public DataTypeDetectorsRepository(List<ITypeDetector> detectors)
         {
             _detectors = detectors;

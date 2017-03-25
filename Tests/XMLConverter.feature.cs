@@ -98,7 +98,7 @@ this.ScenarioSetup(scenarioInfo);
 #line 11
  testRunner.When("I press convert to XML", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 12
- testRunner.Then(@"the final result should be '<Rows><Row><nombre>nexer</nombre><apellido>rodriguez</apellido><edad>21</edad></Row><Row><nombre>kevin</nombre><apellido>estevez</apellido><edad>21</edad></Row><Row><nombre>tonio</nombre><apellido>mejia</apellido><edad>20</edad></Row><Row><nombre>josue</nombre><apellido>barahona</apellido><edad>21</edad></Row></Rows>'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then(@"the final result should be '<Rows><Row><nombre>""nexer""</nombre><apellido>""rodriguez""</apellido><edad>21</edad></Row><Row><nombre>""kevin""</nombre><apellido>""estevez""</apellido><edad>21</edad></Row><Row><nombre>""tonio""</nombre><apellido>""mejia""</apellido><edad>20</edad></Row><Row><nombre>""josue""</nombre><apellido>""barahona""</apellido><edad>21</edad></Row></Rows>'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
         }

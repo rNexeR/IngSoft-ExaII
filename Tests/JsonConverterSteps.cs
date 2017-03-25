@@ -8,6 +8,8 @@ using Logic.OutputWriter;
 using Logic.ParseOptions;
 using Moq;
 using TechTalk.SpecFlow;
+using System.Collections.Generic;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace Tests
 {
@@ -16,6 +18,7 @@ namespace Tests
     {
         private string []_csvArray;
         private CsvConverter _converter;
+        private string _output;
 
         [Given(@"the next table representation of csv file")]
         public void GivenTheNextTableRepresentationOfCsvFile(Table table)
@@ -32,8 +35,8 @@ namespace Tests
         public void WhenIPressConvertToJson()
         {
             var outputWriter = new Mock<IOutputWriter>();
-            string output = "";
-            outputWriter.Setup(x => x.Write(It.IsAny<string>())).Callback<string>(r => output = r);
+            _output = "";
+            outputWriter.Setup(x => x.Write(It.IsAny<string>())).Callback<string>(r => _output = r);
 
             var inputReader = new Mock<IInputReader>();
             inputReader.Setup(x => x.GetInput()).Returns(string.Join("\n", _csvArray));
@@ -41,18 +44,20 @@ namespace Tests
 
             ICsvParseOption csvParseOption = new JsonParseOption();
 
-
-            DataTypeDetectorsRepository dataTypeDetectorsRepository = new DataTypeDetectorsRepository();
+            List<ITypeDetector> detectors = new List<ITypeDetector>();
+            detectors.Add(new IntTypeDetector());
+            detectors.Add(new DateTypeDetector());
+            detectors.Add(new StringTypeDetector());
+            DataTypeDetectorsRepository dataTypeDetectorsRepository = new DataTypeDetectorsRepository(detectors);
 
             _converter = new CsvConverter(inputReader.Object,csvParseOption,dataTypeDetectorsRepository,outputWriter.Object);
             _converter.Convert();
-            Console.WriteLine(output);
         }
         
         [Then(@"the result should be '(.*)'")]
         public void ThenTheResultShouldBe(string p0)
         {
-            ScenarioContext.Current.Pending();
+            Assert.AreEqual(_output, p0);
         }
     }
 }

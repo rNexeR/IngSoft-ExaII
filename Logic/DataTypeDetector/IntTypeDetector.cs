@@ -12,11 +12,9 @@
             return int.TryParse(stringField, out value);
         }
 
-        public dynamic Parse(string stringField)
+        public string Parse(string stringField)
         {
-            int value;
-            int.TryParse(stringField, out value);
-            return value;
+            return stringField;
         }
     }
 }

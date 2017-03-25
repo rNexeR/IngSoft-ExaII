@@ -72,7 +72,11 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
-    <Compile Include="JsonConverter.feature.cs" />
+    <Compile Include="JsonConverter1.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>JsonConverter.feature</DependentUpon>
+    </Compile>
     <Compile Include="JsonConverterSteps.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="DataTypeTests.cs" />
@@ -86,6 +90,10 @@
     <Compile Include="XMLConverterSteps.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="JsonConverter.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>JsonConverter1.feature.cs</LastGenOutput>
+    </None>
     <None Include="packages.config" />
     <None Include="XMLConverter.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>

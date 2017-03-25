@@ -8,65 +8,36 @@ namespace Logic.ParseOptions
 {
     public class XMLParseOption : ICsvParseOption
     {
-        private XML _xml;
-        private int sizeRow = 0;
-        private List<string> beforeFilesNames = new List<string>();
-        private List<string> FilesNames = new List<string>();
-        private List<string> tmpFilesNames = new List<string>();
-        public XMLParseOption(XML xml)
+        //private XML _xml;
+        //private int sizeRow = 0;
+        //private List<string> beforeFilesNames = new List<string>();
+        //private List<string> FilesNames = new List<string>();
+        //private List<string> tmpFilesNames = new List<string>();
+
+        private string _xml;
+        public XMLParseOption()
         {
-            this._xml = xml;
+            this._xml = "<Rows>";
             
         }
         public void AddField(string fieldValue, string fieldName)
         {
-            if (_xml != null)
-            {
-                _xml.tags.Add("<" + fieldName + ">" + fieldValue + "</" + fieldName + ">");
-                tmpFilesNames.Add("<" + fieldName + ">" + fieldValue + "</" + fieldName + ">");
-                beforeFilesNames.Add(fieldName);
-            }
+            _xml += "<" + fieldName + ">" + fieldValue + "</" + fieldName + ">";
         }
 
         public void AddRow()
         {
-
-            for(int i=0; i < beforeFilesNames.Count; i++)
-            {
-                if (!FilesNames.Contains(beforeFilesNames[i]))
-                {
-                    FilesNames.Add(beforeFilesNames[i]);
-                }
-            }
-            string tmp = "<Row>";
-            for(int i=_xml.sizeTags; i<(FilesNames.Count +_xml.sizeTags); i++)
-            {
-                tmp +=tmpFilesNames[i];
-            }
-            if (_xml != null)
-            {
-                _xml.rows.Add(tmp);
-                _xml.sizeTags += FilesNames.Count;
-            }
+            _xml += "<Row>";
         }
 
         public void CloseRow()
         {
-            if (_xml != null)
-            {
-                string tmp = "</Row>";
-                _xml.rows[sizeRow] += tmp;
-            }
+            _xml += "</Row>";
         }
-        public string GetCSVParsedToXML()
+        public override string ToString()
         {
-            string tmp = "<Rows>";
-            for(int i=0; i<_xml.rows.Count; i++)
-            {
-                tmp += _xml.rows[i];
-            }
-            tmp += "</Rows>";
-            return tmp;
+            return _xml += "</Rows>";
+         
         }
     }
 }
